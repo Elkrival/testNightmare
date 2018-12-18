@@ -1,17 +1,12 @@
 const Nightmare = require('nightmare');
 const chai = require('chai');
 const expect = chai.expect
-const nightmare = new Nightmare({ show: true })
+const nightmare = new Nightmare({ show: true, openDevTools: { mode: 'detach' }})
 
-nightmare/*.on('page', function (type="confirm", message){
-    if(message.toLowerCase() === 'are you sure you want to delete all the answers?'){
-        console.log('yes')
-        return true
-    }
-    else {
-        console.log('no')
-    }
-})*/.goto('http://localhost:8080/#/auth/login')
+nightmare.on('page', function (type="confirm", message){
+    return true
+})
+.goto('http://localhost:8080/#/auth/login')
 .type('#email', 'ivan@sourcemap.com')
 .type('#password', 'Haze!20!')
 .click('#enter')
@@ -20,26 +15,28 @@ nightmare/*.on('page', function (type="confirm", message){
 .wait('body > app > main > group-rfis > div > div > div > div.ng-star-inserted > p-datatable > div > div.ui-datatable-scrollable-wrapper.ui-helper-clearfix.max-height.ng-star-inserted > div > div.ui-datatable-scrollable-body > div > table > tbody > tr:nth-child(1)')
 .click('body > app > main > group-rfis > div > div > div > div.ng-star-inserted > p-datatable > div > div.ui-datatable-scrollable-wrapper.ui-helper-clearfix.max-height.ng-star-inserted > div > div.ui-datatable-scrollable-body > div > table > tbody > tr:nth-child(1)')
 .click("body > app > main > group-rfis > div > div > div > div.ng-star-inserted > p-datatable > div > div.ui-datatable-scrollable-wrapper.ui-helper-clearfix.max-height.ng-star-inserted > div > div.ui-datatable-scrollable-body > div > table > tbody > tr:nth-child(2) > td:nth-child(2) > span > div")
-// .wait('#cdk-describedby-message-container')
-// .click("#reset_answers")
-.wait("cdk-describedby-message-container")
-//.evaluate(() =>{
-    // let question = document.getElementById('questionId_3568234163');
-    // console.log(question)
-    // let coord = question.getBoundingClientRect();
-    // console.log(coord)
-    // return coord
-
-//})
-.evaluate(() => document.getElementById('questionId_3568234163'))
+.wait('#cdk-describedby-message-container')
+.click("#reset_answers")
+.wait(5000)
+.evaluate(() =>{
+    let question = document.getElementById('questionId_3568234163');
+    console.log(question)
+    let coord = question.getBoundingClientRect();
+    console.log(question.getBoundingClientRect())
+    return {
+       top: coord.top,
+       left: coord.left
+    }
+})
+.then(res => (console.log(res), res))
+// .scrollTo(res => console.log(res))
+.catch(e => console.error(e))
 // .click("#mat-radio-2 > label > div.mat-radio-container")
 // .wait("button.settings-content-btn.blue-btn.mat-raised-button.ng-star-inserted")
 // .click("button.settings-content-btn.blue-btn.mat-raised-button.ng-star-inserted")
 // .wait('#modules')
 // .click('#modules')
 // .wait('tbody.ui-datatable-data')
-.then(res => console.log(res))
-.catch(e => console.error(e))
 
 // nightmare.goto('https://duck.com')
 // .type('#search_form_input_homepage', 'github nightmare')
