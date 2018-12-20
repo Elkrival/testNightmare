@@ -34,10 +34,19 @@ async function startScrape(){
     await page.click('#mat-dialog-0 > rfi-confirm > div > div:nth-child(3) > button.settings-content-btn.blue-btn.mat-raised-button.ng-star-inserted')
     await page.waitFor(2000);
     await page.click('#mat-slide-toggle-1 > label > div');
+    await page.waitFor(1000);
+    await page.click('#mat-radio-11 > label > div');
+    await page.waitFor(1000);
+    await page.click('[id="213280"]');
+    await page.waitFor(500)
+    await page.keyboard.type('34');
+    await page.click('[id="213280_findings"]');
+    await page.keyboard.type('We found the number of employees')
+    await page.waitFor(2000);
     // await page.focus('#mat-radio-135')
     // await page.click('mat-radio-button#mat-radio-135');
     // await page.click('#mat-radio-138-input');
-
+    await browser.close();
 };
 
 startScrape();
