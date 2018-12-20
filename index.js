@@ -1,5 +1,5 @@
 const pupp = require('puppeteer');
-
+require('dotenv').config();
 
 async function startScrape(){
     const browser = await pupp.launch({ headless: false, devtools: true });
@@ -9,9 +9,9 @@ async function startScrape(){
     })
     await page.goto('http://localhost:8080/#/auth/login');
     await page.click('#email');
-    await page.keyboard.type('ivan@sourcemap.com');
+    await page.keyboard.type(process.env.USERNAME);
     await page.click('#password');
-    await page.keyboard.type('Haze!20!');
+    await page.keyboard.type(process.env.PASSWORD);
     await page.click('#enter');
     await page.waitFor('#modules');
     await page.click('#modules');
@@ -43,9 +43,6 @@ async function startScrape(){
     await page.click('[id="213280_findings"]');
     await page.keyboard.type('We found the number of employees')
     await page.waitFor(2000);
-    // await page.focus('#mat-radio-135')
-    // await page.click('mat-radio-button#mat-radio-135');
-    // await page.click('#mat-radio-138-input');
     await browser.close();
 };
 
