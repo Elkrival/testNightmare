@@ -16,9 +16,9 @@ async function startScrape(){
     await page.waitFor('#modules');
     await page.click('#modules');
     await page.waitFor('body > app > main > group-rfis > div > div > div > div.ng-star-inserted > p-datatable > div > div.ui-datatable-scrollable-wrapper.ui-helper-clearfix.max-height.ng-star-inserted > div > div.ui-datatable-scrollable-body > div > table > tbody > tr:nth-child(2)');
-    await page.click('body > app > main > group-rfis > div > div > div > div.ng-star-inserted > p-datatable > div > div.ui-datatable-scrollable-wrapper.ui-helper-clearfix.max-height.ng-star-inserted > div > div.ui-datatable-scrollable-body > div > table > tbody > tr:nth-child(2)');
-    await page.waitFor('body > app > main > group-rfis > div > div > div > div.ng-star-inserted > p-datatable > div > div.ui-datatable-scrollable-wrapper.ui-helper-clearfix.max-height.ng-star-inserted > div > div.ui-datatable-scrollable-body > div > table > tbody > tr:nth-child(3) > td:nth-child(2)')
-    await page.click('body > app > main > group-rfis > div > div > div > div.ng-star-inserted > p-datatable > div > div.ui-datatable-scrollable-wrapper.ui-helper-clearfix.max-height.ng-star-inserted > div > div.ui-datatable-scrollable-body > div > table > tbody > tr:nth-child(3) > td:nth-child(2)')
+    await page.click('[id="5c1a9f2448e9c94b7d83a4f5"]')
+    await page.waitFor("[id='5bfffa05464f0d276cc078e9']")
+    await page.click('[id="5bfffa05464f0d276cc078e9"]')
     await page.waitFor("#cdk-describedby-message-container");
     await page.click('body > app > main > rfi-answers-detail > div > div.rfi-right-side > div > div > button:nth-child(2) > div.mat-button-ripple.mat-ripple');
     await page.waitFor(10000)
