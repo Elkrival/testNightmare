@@ -2,8 +2,9 @@ const pupp = require('puppeteer');
 require('dotenv').config();
 
 async function startScrape(){
-    const browser = await pupp.launch({ headless: false, devtools: true });
+    const browser = await pupp.launch({ headless: false });
     const page = await browser.newPage()
+    await page.setViewport({ width: 800, height:  1080 })
     page.on('dialog', async (msg)=>{
        return msg.accept()
     })
