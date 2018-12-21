@@ -24,12 +24,18 @@ describe('survey questions', async() =>{
     await page.waitFor("[id='5bfffa05464f0d276cc078e9']")
     await page.click('[id="5bfffa05464f0d276cc078e9"]')
     await page.waitFor("#cdk-describedby-message-container");
+    await page.click('#reset_answers')
     })
     it('should return true if an answer is selected', async()=>{
         await page.click('#mat-radio-135 > label > div')
         let result = await page.evaluate(() => document.getElementById('mat-radio-135-input').checked);
-        console.log(result)
         await expect(result).toBe(true);
+    })
+    it('should return null if selector is not available', async() =>{
+        let result = await page.evaluate(() =>{
+            return document.querySelector('[id="213280"]')
+        });
+        await expect(result).toBe(null);
     })
     afterAll(async()=>{
         await browser.close()
