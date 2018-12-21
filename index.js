@@ -20,7 +20,7 @@ async function startScrape(){
     await page.waitFor("[id='5bfffa05464f0d276cc078e9']")
     await page.click('[id="5bfffa05464f0d276cc078e9"]')
     await page.waitFor("#cdk-describedby-message-container");
-    await page.click('body > app > main > rfi-answers-detail > div > div.rfi-right-side > div > div > button:nth-child(2) > div.mat-button-ripple.mat-ripple');
+    await page.click('#reset_answers')
     await page.waitFor(10000)
     await page.waitForSelector('#mat-radio-135');
     await page.click('#mat-radio-135 > label > div')
