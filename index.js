@@ -16,17 +16,17 @@ async function startScrape(){
     await page.click('#enter');
     await page.waitFor('#modules');
     await page.click('#modules');
-    await page.waitFor('body > app > main > group-rfis > div > div > div > div.ng-star-inserted > p-datatable > div > div.ui-datatable-scrollable-wrapper.ui-helper-clearfix.max-height.ng-star-inserted > div > div.ui-datatable-scrollable-body > div > table > tbody > tr:nth-child(2)');
-    await page.click('[id="5c1a9f2448e9c94b7d83a4f5"]')
-    await page.waitFor("[id='5bfffa05464f0d276cc078e9']")
-    await page.click('[id="5bfffa05464f0d276cc078e9"]')
+    await page.waitFor('[id="5c2d1fdfb75bee74b6154421"]')
+    await page.click('[id="5c2d1fdfb75bee74b6154421"]')
+    await page.waitFor("[id='5c06c1c8d92248363acf47cf']")
+    await page.click('[id="5c06c1c8d92248363acf47cf"]')
     await page.waitFor("#cdk-describedby-message-container");
     await page.click('#reset_answers')
     await page.waitFor(10000)
-    await page.waitForSelector('#mat-radio-135');
-    await page.click('#mat-radio-135 > label > div')
+    await page.waitForSelector('#facility_country');
+    await page.click('#facility_country')
     await page.waitFor(2000);
-    await page.click('#mat-checkbox-3 > label > div');
+    await page.click("#mat-option-99 > span.mat-option-text");
     await page.waitFor(2000);
     await page.click("[id='213190_findings']");
     await page.keyboard.type('Best Farms Ever');

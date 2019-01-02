@@ -4,6 +4,7 @@ require('dotenv').config();
 describe('survey questions', async() =>{
     let browser
     let page
+    let a;
  beforeAll(async() =>{
      jest.setTimeout(30000)
      browser = await pupp.launch();
@@ -19,10 +20,10 @@ describe('survey questions', async() =>{
     await page.click('#enter');
     await page.waitFor('#modules');
     await page.click('#modules');
-    await page.waitFor('body > app > main > group-rfis > div > div > div > div.ng-star-inserted > p-datatable > div > div.ui-datatable-scrollable-wrapper.ui-helper-clearfix.max-height.ng-star-inserted > div > div.ui-datatable-scrollable-body > div > table > tbody > tr:nth-child(2)');
-    await page.click('[id="5c1a9f2448e9c94b7d83a4f5"]')
-    await page.waitFor("[id='5bfffa05464f0d276cc078e9']")
-    await page.click('[id="5bfffa05464f0d276cc078e9"]')
+    await page.waitFor('[id="5c2d1fdfb75bee74b6154421"]')
+    await page.click('[id="5c2d1fdfb75bee74b6154421"]')
+    await page.waitFor("[id='5c06c1c8d92248363acf47cf']")
+    await page.click('[id="5c06c1c8d92248363acf47cf"]')
     await page.waitFor("#cdk-describedby-message-container");
     await page.click('#reset_answers')
     })
@@ -33,10 +34,13 @@ describe('survey questions', async() =>{
     })
     it('should return null if selector is not available', async() =>{
         let result = await page.evaluate(() =>{
+            a = document.querySelector('[id="213280"]')
             return document.querySelector('[id="213280"]')
         });
+        console.log(a)
         await expect(result).toBe(null);
     })
+    
     afterAll(async()=>{
         await browser.close()
     })
