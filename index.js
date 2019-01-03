@@ -1,6 +1,4 @@
 const pupp = require('puppeteer');
-const testFile = require('../hellowithwaves.png')
-console.log(testFile)
 require('dotenv').config();
 
 async function startScrape(){
@@ -53,7 +51,7 @@ async function startScrape(){
     await page.waitFor(2000);
     // await page.click('#__filestack-picker > div > div.fsp-picker.fsp-picker--active > div.fsp-modal > div.fsp-modal__body > div.fsp-content > div > div > div');
     const input = await page.$('#fsp-fileUpload');
-    await input.uploadFile(testFile)
+    await input.uploadFile('../hellowithwaves.png')
     await page.waitFor(2000);
     await page.click('#__filestack-picker > div > div > div.fsp-modal > div.fsp-modal__body > div.fsp-content.fsp-content--selected-items > div > div.fsp-summary__body > div.fsp-footer.fsp-footer--appeared > div > span.fsp-footer__nav--right');
     await page.waitFor(10000);
