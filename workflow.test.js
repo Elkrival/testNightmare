@@ -4,7 +4,7 @@ require('dotenv').config();
 describe('survey questions', async() =>{
     let browser
     let page
-    let a;
+    let idList= ['mat-radio-27','mat-radio-29','mat-radio-32','mat-radio-35']
  beforeAll(async() =>{
      jest.setTimeout(30000)
      browser = await pupp.launch();
@@ -28,18 +28,16 @@ describe('survey questions', async() =>{
     await page.click('#reset_answers')
     })
     it('should return true if an answer is selected', async()=>{
-        await page.click('#mat-radio-135 > label > div')
-        let result = await page.evaluate(() => document.getElementById('mat-radio-135-input').checked);
+        await page.click('#mat-radio-2 > label > div')
+        let result = await page.evaluate(() => document.getElementById('mat-radio-2-input').checked);
         await expect(result).toBe(true);
     })
-    it('should return null if selector is not available', async() =>{
-        let result = await page.evaluate(() =>{
-            a = document.querySelector('[id="213280"]')
-            return document.querySelector('[id="213280"]')
-        });
-        console.log(a)
-        await expect(result).toBe(null);
-    })
+        it('should return falsy if selector is not available', async() =>{
+            let result = await page.evaluate(() =>{
+                return document.getElementById(id)
+            });
+            await expect(result).toBeFalsy();
+        })
     
     afterAll(async()=>{
         await browser.close()
