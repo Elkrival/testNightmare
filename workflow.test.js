@@ -4,9 +4,9 @@ require('dotenv').config();
 describe('survey questions', async() =>{
     let browser
     let page
-    let idList= ['mat-radio-27','mat-radio-29','mat-radio-32','mat-radio-35']
+    // let idList= ['mat-radio-27','mat-radio-29','mat-radio-32','mat-radio-35']
  beforeAll(async() =>{
-     jest.setTimeout(30000)
+     jest.setTimeout(100000)
      browser = await pupp.launch();
      page = await browser.newPage()
     page.on('dialog', async(msg)=>{
@@ -19,25 +19,27 @@ describe('survey questions', async() =>{
     await page.keyboard.type(process.env.PASSWORD);
     await page.click('#enter');
     await page.waitFor('#modules');
-    await page.click('#modules');
-    await page.waitFor('[id="5c2d1fdfb75bee74b6154421"]')
-    await page.click('[id="5c2d1fdfb75bee74b6154421"]')
-    await page.waitFor("[id='5c06c1c8d92248363acf47cf']")
-    await page.click('[id="5c06c1c8d92248363acf47cf"]')
+    await page.waitForSelector(`[id="${process.env.SURVEY_TYPE_ID}"]`)
+    await page.click(`[id="${process.env.SURVEY_TYPE_ID}"]`)
+    await page.waitFor(`[id="${process.env.SURVEY_ID}"]`)
+    await page.click(`[id="${process.env.SURVEY_ID}"]`)
     await page.waitFor("#cdk-describedby-message-container");
     await page.click('#reset_answers')
     })
+    it('should return falsy if selector is not available', async() =>{
+        let result = await page.evaluate(() =>{
+            return document.querySelector('#mat-radio-27')
+        });
+        await expect(result).toBeFalsy();
+    })
     it('should return true if an answer is selected', async()=>{
-        await page.click('#mat-radio-2 > label > div')
-        let result = await page.evaluate(() => document.getElementById('mat-radio-2-input').checked);
+        await page.click("#mat-radio-2 > label > div ");
+        let result = await page.evaluate(() => {
+            document.querySelector('#mat-radio-2-input').checked
+        });
         await expect(result).toBe(true);
     })
-        it('should return falsy if selector is not available', async() =>{
-            let result = await page.evaluate(() =>{
-                return document.getElementById(id)
-            });
-            await expect(result).toBeFalsy();
-        })
+        
     
     afterAll(async()=>{
         await browser.close()

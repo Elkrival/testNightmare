@@ -1,13 +1,61 @@
 const pupp = require('puppeteer');
 require('dotenv').config();
-
+const events = [
+    'dialog',
+    'request',
+    'response'
+]
+let array=[]
 async function startScrape(){
-    const browser = await pupp.launch({ headless: false });
+    const browser = await pupp.launch({ headless: false, devtools: true });
     const page = await browser.newPage()
-    await page.setViewport({ width: 800, height:  1080 })
-    page.on('dialog', async (msg)=>{
-       return msg.accept()
+    await page.setViewport({ width: 900, height:  1080 })
+    events.forEach(eventType => {
+        page.on(eventType, async (eventFilterFunc)=>{
+        if(eventType === 'dialog') {
+            return eventFilterFunc.accept()
+        }
+        // else if(eventType === 'request'){
+        //     return eventFilterFunc.continue()
+        // }
+        else if(eventType === 'response') {
+            console.log(eventFilterFunc.url())
+            if(eventFilterFunc.url().includes('/answers')) {
+                let a = await eventFilterFunc.json().then(res => res).catch(e => console.error(e.message))
+                let pages = a.pages.map(el => el.page)
+                let components = a.pages.map(el => el.components)
+                // console.log('WEeeee', pages)
+                // console.log('cccccooooomp', components)
+                let test = await components.map((el) => {
+                    for (const element in el) {
+                        return array.push(el[element])
+                    }
+                });
+                let hidden = array.filter(el => {
+                    for (const hiddenPropr in el) {
+                        if (el.hasOwnProperty('hidden')) {
+                            return true
+                        }
+                        else return false
+                    }
+                })
+                let radio = array.filter(el =>{
+                    // for (const element in el) {
+                        if (el.type === 'radiooptions') {
+                            return true
+                        }
+                        else return false
+                    // }
+                })
+                console.log('%%%%%%%%%%%%%%%%%%%%%%%', hidden)
+                console.log('########################', radio)
+                console.log(array.length > hidden.length, '$$$$$$$$$$$$$$$$$$$$$$$$$$$')
+                console.log(array.length > radio.length, '$$$$$$$$$$$$$$$$$$$$$$$$$$$')
+
+            }
+        }
     })
+})
     await page.goto('http://localhost:8080/#/auth/login');
     await page.click('#email');
     await page.keyboard.type(process.env.USERNAME);
