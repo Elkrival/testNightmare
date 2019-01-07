@@ -5,34 +5,23 @@ const events = [
     'request',
     'response'
 ]
-async function parentChildReveal(masterArray, hiddenQuestionsArray, searchString) {
+async function parentChildReveal(masterArray, hiddenQuestionsArray) {
     let revealedByArray = []
-    let a = await hiddenQuestionsArray.map((hiddenQuestion) =>{
-        let revealed = hiddenQuestion.revealed;
-        let revealedBy = revealed.split('.answers').map(el => el.split('.answer')).filter((el, index) => index !== 0).map(str => str[0]).join('').split("'")[1]
+    const hiddenQuestionMap = await hiddenQuestionsArray.map((hiddenQuestion) =>{
+        const revealed = hiddenQuestion.revealed;
+        const revealedBy = revealed.split('.answers').map(el => el.split('.answer')).filter((el, index) => index !== 0).map(str => str[0]).join('').split("'")[1]
         revealedByArray.push(revealedBy);
-        return {
-            ...hiddenQuestion,
-            revealedBy        
-        }
+        return { ...hiddenQuestion, revealedBy }
     })
-    let noDuplicateRevealed = await Array.from(new Set(revealedByArray));
-    await console.log(a);
-    await console.log(revealedByArray);
-    await console.log(noDuplicateRevealed, '=================================^', noDuplicateRevealed.length, revealedByArray.length, noDuplicateRevealed.length < revealedByArray.length);
+    const noDuplicateRevealed = await Array.from(new Set(revealedByArray));
     revealedByArray = [];
-    let grandArray = await noDuplicateRevealed.map((id) =>{
-        let type = masterArray.find((parent) => id === parent.id).type;
-        console.log(type)
-        let children = a.filter((question) => id === question.revealedBy);
-        console.log(children, 'T================H=============E=================C==========H')
-        return {
-            id, 
-            type,
-            children
-        }
+    const parentChildRevealArray = await noDuplicateRevealed.map((id) =>{
+        const type = masterArray.find((parent) => id === parent.id).type;
+        const children = hiddenQuestionMap.filter((question) => id === question.revealedBy);
+        return { id, type, children }
     })
-    console.log(grandArray, '====================g^^^^^^^^^^^^^^^^^^^^^^r$$$$$$$$$$$$$$$$$$$$$$$a')
+    console.log(parentChildRevealArray.length === noDuplicateRevealed.length)
+    return parentChildRevealArray
 }
 async function startScrape(){
     let array=[]
@@ -49,7 +38,6 @@ async function startScrape(){
             if(eventFilterFunc.url().includes('/answers')) {
                 let a = await eventFilterFunc.json().then(res => res).catch(e => console.error(e.message))
                 if(a.hasOwnProperty('pages') && Array.isArray(a.pages) && a.pages.length > 0){
-                    console.log(a, '-------------------------------------===========================')
                     let pages = await a.pages.map(el => el.page)
                     let components = await a.pages.map(el => el.components)
                     let test = await components.forEach((el) => {
@@ -58,22 +46,13 @@ async function startScrape(){
                         }
                     })
                     array.sort((a,b) => a.position - b.position);  
-                    console.log(array, '$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ Array', array.length)
                     let hidden = await array.filter(el => el.hasOwnProperty('hidden') === true ? true : false)
                     let radio = await array.filter(el =>el.type === 'radiooptions' ? true : false)
                     let file = await array.filter(el => el.type === 'file' ? true : false);
                     let dropdowns = await array.filter(el => el.type === 'dropdown' ? true : false);
                     let number = await array.filter(el => el.type === 'text' ? true:false);
-                    // console.log('**************************', number, number.length);
-                    console.log('%%%%%%%%%%%%%%%%%%%%%%%', hidden, hidden.length)
-                    await parentChildReveal(array, hidden, '');
-                    // console.log('########################', radio, radio.length)
-                    // console.log('@@@@@@@@@@@@@@@@@@@@@@@@@@@@', file, file.length);
-                    // console.log('^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^', dropdowns, dropdowns.length);
-                    // console.log(array.length > hidden.length, '$$$$$$$$$$$$$$$$$$$$$$$$$$$')
-                    // console.log(array.length > radio.length, '$$$$$$$$$$$$$$$$$$$$$$$$$$$')
-
-
+                    let parentChildRevealArray = await parentChildReveal(array, hidden);
+                    console.log(parentChildRevealArray, '=======================%%%%%%%%%%%%%%%%%%%%%%%#######################PCRA')
                 }
                 else {
                     console.log('nothing to see here =============================================')
