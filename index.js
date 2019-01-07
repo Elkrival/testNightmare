@@ -5,9 +5,9 @@ const events = [
     'request',
     'response'
 ]
-let array=[]
 async function startScrape(){
-    const browser = await pupp.launch({ headless: false, devtools: true });
+    let array=[]
+    const browser = await pupp.launch({ headless: true, devtools: true });
     const page = await browser.newPage()
     await page.setViewport({ width: 900, height:  1080 })
     events.forEach(eventType => {
@@ -15,43 +15,37 @@ async function startScrape(){
         if(eventType === 'dialog') {
             return eventFilterFunc.accept()
         }
-        // else if(eventType === 'request'){
-        //     return eventFilterFunc.continue()
-        // }
         else if(eventType === 'response') {
             console.log(eventFilterFunc.url())
             if(eventFilterFunc.url().includes('/answers')) {
                 let a = await eventFilterFunc.json().then(res => res).catch(e => console.error(e.message))
-                let pages = a.pages.map(el => el.page)
-                let components = a.pages.map(el => el.components)
-                // console.log('WEeeee', pages)
-                // console.log('cccccooooomp', components)
-                let test = await components.map((el) => {
-                    for (const element in el) {
-                        return array.push(el[element])
-                    }
-                });
-                let hidden = array.filter(el => {
-                    for (const hiddenPropr in el) {
-                        if (el.hasOwnProperty('hidden')) {
-                            return true
+                if(a.hasOwnProperty('pages') && Array.isArray(a.pages) && a.pages.length > 0){
+                    console.log(a, '-------------------------------------===========================')
+                    let pages = await a.pages.map(el => el.page)
+                    let components = await a.pages.map(el => el.components)
+                    let test = await components.forEach((el) => {
+                        for (const element in el) {
+                            array.push(el[element])
                         }
-                        else return false
-                    }
-                })
-                let radio = array.filter(el =>{
-                    // for (const element in el) {
-                        if (el.type === 'radiooptions') {
-                            return true
-                        }
-                        else return false
-                    // }
-                })
-                console.log('%%%%%%%%%%%%%%%%%%%%%%%', hidden)
-                console.log('########################', radio)
-                console.log(array.length > hidden.length, '$$$$$$$$$$$$$$$$$$$$$$$$$$$')
-                console.log(array.length > radio.length, '$$$$$$$$$$$$$$$$$$$$$$$$$$$')
-
+                    })
+                    array.sort((a,b) => a.position - b.position);  
+                    // console.log(array, '$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ Array', array.length)
+                    let hidden = await array.filter(el => el.hasOwnProperty('hidden') === true ? true : false)
+                    let radio = await array.filter(el =>el.type === 'radiooptions' ? true : false)
+                    let file = await array.filter(el => el.type === 'file' ? true : false);
+                    let dropdowns = await array.filter(el => el.type === 'dropdown' ? true : false);
+                    let number = await array.filter(el => el.type === 'text' ? true:false);
+                    console.log('**************************', number, number.length);
+                    console.log('%%%%%%%%%%%%%%%%%%%%%%%', hidden, hidden.length)
+                    console.log('########################', radio, radio.length)
+                    console.log('@@@@@@@@@@@@@@@@@@@@@@@@@@@@', file, file.length);
+                    console.log('^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^', dropdowns, dropdowns.length);
+                    // console.log(array.length > hidden.length, '$$$$$$$$$$$$$$$$$$$$$$$$$$$')
+                    // console.log(array.length > radio.length, '$$$$$$$$$$$$$$$$$$$$$$$$$$$')
+                }
+                else {
+                    console.log('nothing to see here =============================================')
+                }
             }
         }
     })
@@ -70,6 +64,7 @@ async function startScrape(){
     await page.click(`[id="${process.env.SURVEY_ID}"]`)
     await page.waitFor("#cdk-describedby-message-container");
     await page.click('#reset_answers')
+    array = []
     await page.waitFor(7000)
     await page.waitForSelector('#facility_country');
     await page.click('#facility_country')
