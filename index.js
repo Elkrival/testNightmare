@@ -1,31 +1,17 @@
 const pupp = require('puppeteer');
+const parentChildReveal = require('./response_helpers');
+const dynamicQuestionFilter = require('./question_filters');
+console.log(dynamicQuestionFilter, '&&&&&&&&&&&&&&&&&&&&&&&&&&0000000000000000000000')
 require('dotenv').config();
 const events = [
     'dialog',
     'request',
     'response'
 ]
-async function parentChildReveal(masterArray, hiddenQuestionsArray) {
-    let revealedByArray = []
-    const hiddenQuestionMap = await hiddenQuestionsArray.map((hiddenQuestion) =>{
-        const revealed = hiddenQuestion.revealed;
-        const revealedBy = revealed.split('.answers').map(el => el.split('.answer')).filter((el, index) => index !== 0).map(str => str[0]).join('').split("'")[1]
-        revealedByArray.push(revealedBy);
-        return { ...hiddenQuestion, revealedBy }
-    })
-    const noDuplicateRevealed = await Array.from(new Set(revealedByArray));
-    revealedByArray = [];
-    const parentChildRevealArray = await noDuplicateRevealed.map((id) =>{
-        const type = masterArray.find((parent) => id === parent.id).type;
-        const children = hiddenQuestionMap.filter((question) => id === question.revealedBy);
-        return { id, type, children }
-    })
-    console.log(parentChildRevealArray.length === noDuplicateRevealed.length)
-    return parentChildRevealArray
-}
+
 async function startScrape(){
     let array=[]
-    const browser = await pupp.launch({ headless: true, devtools: true });
+    const browser = await pupp.launch({ headless: false, devtools: false });
     const page = await browser.newPage()
     await page.setViewport({ width: 900, height:  1080 })
     events.forEach(eventType => {
@@ -35,27 +21,35 @@ async function startScrape(){
         }
         else if(eventType === 'response') {
             console.log(eventFilterFunc.url())
-            if(eventFilterFunc.url().includes('/answers')) {
-                let a = await eventFilterFunc.json().then(res => res).catch(e => console.error(e.message))
-                if(a.hasOwnProperty('pages') && Array.isArray(a.pages) && a.pages.length > 0){
-                    let pages = await a.pages.map(el => el.page)
-                    let components = await a.pages.map(el => el.components)
-                    let test = await components.forEach((el) => {
+            if(eventFilterFunc.url().includes('rfis/answers/') && !eventFilterFunc.url().includes('rfis/answers/templates')) {
+                let rfiResponse = await eventFilterFunc.json().then(res => res).catch(e => console.error(e.message))
+                if(rfiResponse.hasOwnProperty('pages') && Array.isArray(rfiResponse.pages) && rfiResponse.pages.length > 0){
+                    let components = await rfiResponse.pages.map(el => el.components)
+                    await components.forEach((el) => {
                         for (const element in el) {
                             array.push(el[element])
                         }
                     })
                     array.sort((a,b) => a.position - b.position);  
-                    let hidden = await array.filter(el => el.hasOwnProperty('hidden') === true ? true : false)
-                    let radio = await array.filter(el =>el.type === 'radiooptions' ? true : false)
-                    let file = await array.filter(el => el.type === 'file' ? true : false);
-                    let dropdowns = await array.filter(el => el.type === 'dropdown' ? true : false);
-                    let number = await array.filter(el => el.type === 'text' ? true:false);
+                    let hidden = await dynamicQuestionFilter(array, 'hidden');
+                    console.log(hidden)
+                    let radio = await dynamicQuestionFilter(array,'radio');
+                    
+                    console.log(radio)
+                    let file = await dynamicQuestionFilter(array, 'file');
+                    
+                    console.log(file)
+                    let dropdowns = await dynamicQuestionFilter(array, 'dropdown');
+                    
+                    console.log(dropdowns)
+                    let number = await dynamicQuestionFilter(array, 'text');
+                    
+                    console.log(number)
                     let parentChildRevealArray = await parentChildReveal(array, hidden);
-                    console.log(parentChildRevealArray, '=======================%%%%%%%%%%%%%%%%%%%%%%%#######################PCRA')
+                    console.log(parentChildRevealArray)
                 }
                 else {
-                    console.log('nothing to see here =============================================')
+                    console.log('ಠ_ಠ ¯\_(ツ)_/¯ Nothing To See here ¯\_(ツ)_/¯ಠ_ಠ')
                 }
             }
         }

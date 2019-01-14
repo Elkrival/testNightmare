@@ -2,8 +2,8 @@ const pupp = require('puppeteer');
 let chai = require('chai');
 let should = chai.should()
 let expect = chai.expect
-const parentChildReveal = require('./response_helpers');
-const dynamicQuestionFilter = require('./question_filters');
+const parentChildReveal = require('../response_helpers');
+const dynamicQuestionFilter = require('../question_filters');
 require('dotenv').config();
 
     let browser
@@ -19,14 +19,14 @@ require('dotenv').config();
     let surveyId 
     let surveyTypeId
 
-describe('Survey Tests',  async()=>{
+describe('Survey Tests', function(){
+    this.timeout(30000)
     before(async() =>{
     const events = [
         'dialog',
         'request',
         'response'
     ]
-     jest.setTimeout(90000)
      browser = await pupp.launch();
      page = await browser.newPage()
      await events.forEach(eventType => {
@@ -77,28 +77,36 @@ describe('Survey Tests',  async()=>{
     // await hiddenTests(hidden)
     await hidden.forEach(async question => await grr(question))
     })
-    await it('should test true for array and length', async() =>{
+    it('should test true for array and length', async() =>{
         await expect(questionArray.length).to.be.equal(0)
     })
     // hidden = dynamicQuestionFilter(questionArray, 'hidden');
-
-        for (let hiddenQuestion = 0; hiddenQuestion < hidden.length; hiddenQuestion++) {
-             it('should do this',  ()=>{
-                console.log(hidden[hiddenQuestion]);
-            })
-            await grr(question)
-        }
+    hidden.forEach(question =>{
+        it('should check for validity', async()=>{
+            let result = await page.evaluate(() => document.getElementById(question.id))
+            console.log(result)
+            await expect(result).to.be.false()
+        })
+    })
+        // for (let hiddenQuestion = 0; hiddenQuestion < hidden.length; hiddenQuestion++) {
+        //      it('should do this',  ()=>{
+        //         console.log(hidden[hiddenQuestion]);
+        //     })
+        //     grr(question)
+        // }
 
         
     after(async()=>{
         await browser.close()
     })
 async function grr(question){
-    await describe('hidden questions',async()=>{
+    describe('hidden questions',()=>{
         let testQuestion
         console.log('inside')
-    await it('should do this', async()=>{
-        console.log('inside two')
+    it('should do this', async()=>{
+        let result = await page.evaluate(() => document.getElementById(question.id))
+        console.log(result);
+        await expect(question.id).to.be.a('string')
     })
     })
 }
