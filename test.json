@@ -1,0 +1,1484 @@
+[
+  {
+    "type": "file",
+    "name": "<h2 class='class5-tag'>2.1</h2>Upload an example of a transaction document",
+    "position": 2,
+    "id": "global_2_1",
+    "required": true,
+    "hidden": true,
+    "style": "class4-regular childBackground childBackground--first",
+    "revealed": "pages['vf_leather-facility_information0'].answers['global_2'].answer === 1",
+    "category": "excel/doc/pdf/images"
+  },
+  {
+    "type": "radiooptions",
+    "name": "<h2 class='class5-tag'>2.2</h2>Does your documentation contain details of the seller?",
+    "position": 3,
+    "id": "global_2_2",
+    "required": true,
+    "hidden": true,
+    "style": "class4-regular childBackground",
+    "revealed": "pages['vf_leather-facility_information0'].answers['global_2'].answer === 1",
+    "rfi_options_id": "5c40bcb05166f6abf0c397ce",
+    "options": {
+      "1": {
+        "value": 1,
+        "display": "Yes"
+      },
+      "2": {
+        "value": 2,
+        "display": "No"
+      }
+    }
+  },
+  {
+    "type": "radiooptions",
+    "name": "<h2 class='class5-tag'>2.3</h2>Does your documentation list the amount and description of the material purchased?",
+    "position": 4,
+    "id": "global_2_3",
+    "required": true,
+    "hidden": true,
+    "style": "class4-regular childBackground",
+    "revealed": "pages['vf_leather-facility_information0'].answers['global_2'].answer === 1",
+    "rfi_options_id": "5c40bcb05166f6abf0c397ce",
+    "options": {
+      "1": {
+        "value": 1,
+        "display": "Yes"
+      },
+      "2": {
+        "value": 2,
+        "display": "No"
+      }
+    }
+  },
+  {
+    "type": "radiooptions",
+    "name": "<h2 class='class5-tag'>2.4</h2>Does your documentation report the date of shipment and delivery?",
+    "position": 5,
+    "id": "global_2_4",
+    "required": true,
+    "hidden": true,
+    "style": "class4-regular childBackground",
+    "revealed": "pages['vf_leather-facility_information0'].answers['global_2'].answer === 1",
+    "rfi_options_id": "5c40bcb05166f6abf0c397ce",
+    "options": {
+      "1": {
+        "value": 1,
+        "display": "Yes"
+      },
+      "2": {
+        "value": 2,
+        "display": "No"
+      }
+    }
+  },
+  {
+    "type": "radiooptions",
+    "name": "<h2 class='class5-tag'>2.5</h2>Does your documentation show the country and address of origin?",
+    "position": 6,
+    "id": "global_2_5",
+    "required": true,
+    "hidden": true,
+    "style": "class4-regular childBackground childBackground--last",
+    "revealed": "pages['vf_leather-facility_information0'].answers['global_2'].answer === 1",
+    "rfi_options_id": "5c40bcb05166f6abf0c397ce",
+    "options": {
+      "1": {
+        "value": 1,
+        "display": "Yes"
+      },
+      "2": {
+        "value": 2,
+        "display": "No"
+      }
+    }
+  },
+  {
+    "type": "file",
+    "name": "<h2 class='class5-tag'>3.1</h2> Upload an example of a transaction document",
+    "position": 8,
+    "id": "global_3_1",
+    "required": true,
+    "hidden": true,
+    "style": "class4-regular childBackground childBackground--first",
+    "revealed": "pages['vf_leather-facility_information0'].answers['global_3'].answer === 1",
+    "category": "excel/doc/pdf/images"
+  },
+  {
+    "type": "radiooptions",
+    "name": "<h2 class='class5-tag'>3.2</h2>Does your documentation contain details of the buyer?",
+    "position": 9,
+    "id": "global_3_2",
+    "required": true,
+    "hidden": true,
+    "style": "class4-regular childBackground",
+    "revealed": "pages['vf_leather-facility_information0'].answers['global_3'].answer === 1",
+    "rfi_options_id": "5c40bcb05166f6abf0c397ce",
+    "options": {
+      "1": {
+        "value": 1,
+        "display": "Yes"
+      },
+      "2": {
+        "value": 2,
+        "display": "No"
+      }
+    }
+  },
+  {
+    "type": "radiooptions",
+    "name": "<h2 class='class5-tag'>3.3</h2>Does your documentation list the amount and description of the material or product sold?",
+    "position": 10,
+    "id": "global_3_3",
+    "required": true,
+    "hidden": true,
+    "style": "class4-regular childBackground",
+    "revealed": "pages['vf_leather-facility_information0'].answers['global_3'].answer === 1",
+    "rfi_options_id": "5c40bcb05166f6abf0c397ce",
+    "options": {
+      "1": {
+        "value": 1,
+        "display": "Yes"
+      },
+      "2": {
+        "value": 2,
+        "display": "No"
+      }
+    }
+  },
+  {
+    "type": "radiooptions",
+    "name": "<h2 class='class5-tag'>3.4</h2>Does your documentation report the date of shipment and delivery?",
+    "position": 11,
+    "id": "global_3_4",
+    "required": true,
+    "hidden": true,
+    "style": "class4-regular childBackground",
+    "revealed": "pages['vf_leather-facility_information0'].answers['global_3'].answer === 1",
+    "rfi_options_id": "5c40bcb05166f6abf0c397ce",
+    "options": {
+      "1": {
+        "value": 1,
+        "display": "Yes"
+      },
+      "2": {
+        "value": 2,
+        "display": "No"
+      }
+    }
+  },
+  {
+    "type": "radiooptions",
+    "name": "<h2 class='class5-tag'>3.5</h2>Does your documentation show the country and address of origin?",
+    "position": 12,
+    "id": "global_3_5",
+    "required": true,
+    "hidden": true,
+    "style": "class4-regular childBackground childBackground--last",
+    "revealed": "pages['vf_leather-facility_information0'].answers['global_3'].answer === 1",
+    "rfi_options_id": "5c40bcb05166f6abf0c397ce",
+    "options": {
+      "1": {
+        "value": 1,
+        "display": "Yes"
+      },
+      "2": {
+        "value": 2,
+        "display": "No"
+      }
+    }
+  },
+  {
+    "type": "radiooptions",
+    "name": "<h2 class='class5-tag'>6.1</h2>Are all personnel handling incoming and outgoing materials trained to explain and work with this administrative link?",
+    "position": 16,
+    "id": "global_4_1",
+    "required": true,
+    "hidden": true,
+    "style": "class4-regular childBackground childBackground--firstlast",
+    "revealed": "pages['vf_leather-facility_information0'].answers['global_4'].answer === 1",
+    "rfi_options_id": "5c40bcb05166f6abf0c397ce",
+    "options": {
+      "1": {
+        "value": 1,
+        "display": "Yes"
+      },
+      "2": {
+        "value": 2,
+        "display": "No"
+      }
+    }
+  },
+  {
+    "type": "radiooptions",
+    "name": "<h2 class='class5-tag'>7.1</h2>Does the Footwear Manufacturer have a segregation system to prevent commingling, and separately register hides for VF Corporation production?",
+    "position": 18,
+    "id": "foot_1",
+    "required": true,
+    "hidden": true,
+    "style": "class3-blackbold",
+    "revealed": "pages['vf_leather-facility_information1'].answers['foot_yn'].answer === 1",
+    "rfi_options_id": "5c40bcb05166f6abf0c397ce",
+    "options": {
+      "1": {
+        "value": 1,
+        "display": "Yes"
+      },
+      "2": {
+        "value": 2,
+        "display": "No"
+      }
+    }
+  },
+  {
+    "type": "radiooptions",
+    "name": "<h2 class='class5-tag'>7.2</h2>Does the Footwear Manufacturer have written procedures in place for handling and documenting the materials used for VF corporation? ",
+    "position": 19,
+    "id": "foot_2",
+    "required": true,
+    "hidden": true,
+    "style": "class3-blackbold",
+    "revealed": "pages['vf_leather-facility_information1'].answers['foot_yn'].answer === 1",
+    "rfi_options_id": "5c40bcb05166f6abf0c397ce",
+    "options": {
+      "1": {
+        "value": 1,
+        "display": "Yes"
+      },
+      "2": {
+        "value": 2,
+        "display": "No"
+      }
+    }
+  },
+  {
+    "type": "file",
+    "name": "<h2 class='class5-tag'>7.2.1</h2>Upload all personal training records related to separation of batches",
+    "position": 20,
+    "id": "foot_2_a",
+    "required": true,
+    "hidden": true,
+    "style": "class4-regular childBackground childBackground--firstlast",
+    "revealed": "pages['vf_leather-facility_information1'].answers['foot_2'].answer === 1",
+    "category": "excel/doc/pdf/images"
+  },
+  {
+    "type": "radiooptions",
+    "name": "<h2 class='class5-tag'>7.3</h2>Is there an up-to-date system in place to record all the leather purchased for VF Corporation that is accessible at the any time?",
+    "position": 21,
+    "id": "foot_3",
+    "required": true,
+    "hidden": true,
+    "style": "class3-blackbold",
+    "revealed": "pages['vf_leather-facility_information1'].answers['foot_yn'].answer === 1",
+    "rfi_options_id": "5c40bcb05166f6abf0c397ce",
+    "options": {
+      "1": {
+        "value": 1,
+        "display": "Yes"
+      },
+      "2": {
+        "value": 2,
+        "display": "No"
+      }
+    }
+  },
+  {
+    "type": "radiooptions",
+    "name": "<h2 class='class5-tag'>7.4</h2>In instances where the Footwear Manufacturer uses different facilities, is there an internal system in place that shows the location of each batch of leather during the process?",
+    "position": 22,
+    "id": "foot_4",
+    "required": true,
+    "hidden": true,
+    "style": "class3-blackbold",
+    "revealed": "pages['vf_leather-facility_information1'].answers['foot_yn'].answer === 1",
+    "rfi_options_id": "5c40bcb05166f6abf0c397ce",
+    "options": {
+      "1": {
+        "value": 1,
+        "display": "Yes"
+      },
+      "2": {
+        "value": 2,
+        "display": "No"
+      }
+    }
+  },
+  {
+    "type": "radiooptions",
+    "name": "<h2 class='class5-tag'>7.5</h2>Is the Footwear Manufacturer able to prove during the process which leather is used in the process for VF Corporation?",
+    "position": 23,
+    "id": "foot_5",
+    "required": true,
+    "hidden": true,
+    "style": "class3-blackbold",
+    "revealed": "pages['vf_leather-facility_information1'].answers['foot_yn'].answer === 1",
+    "rfi_options_id": "5c40bcb05166f6abf0c397ce",
+    "options": {
+      "1": {
+        "value": 1,
+        "display": "Yes"
+      },
+      "2": {
+        "value": 2,
+        "display": "No"
+      }
+    }
+  },
+  {
+    "type": "radiooptions",
+    "name": "<h2 class='class5-tag'>7.6</h2>Is the Footwear Manufacturer able to ensure that qualified leather ends up in the products for VF Corporation?",
+    "position": 24,
+    "id": "foot_6",
+    "required": true,
+    "hidden": true,
+    "style": "class3-blackbold",
+    "revealed": "pages['vf_leather-facility_information1'].answers['foot_yn'].answer === 1",
+    "rfi_options_id": "5c40bcb05166f6abf0c397ce",
+    "options": {
+      "1": {
+        "value": 1,
+        "display": "Yes"
+      },
+      "2": {
+        "value": 2,
+        "display": "No"
+      }
+    }
+  },
+  {
+    "type": "radiooptions",
+    "name": "<h2 class='class5-tag'>7.7</h2>Each product season the Footwear Manufacturer must provide an overview to VF Corporation including a specification detailing all suppliers from which their leather is supplied and an overview for which VF Corporation products the leather is used. Do you have this VF overview document? ",
+    "position": 25,
+    "id": "foot_7",
+    "required": true,
+    "hidden": true,
+    "style": "class3-blackbold",
+    "revealed": "pages['vf_leather-facility_information1'].answers['foot_yn'].answer === 1",
+    "rfi_options_id": "5c40bcb05166f6abf0c397ce",
+    "options": {
+      "1": {
+        "value": 1,
+        "display": "Yes"
+      },
+      "2": {
+        "value": 2,
+        "display": "No"
+      }
+    }
+  },
+  {
+    "type": "radiooptions",
+    "name": "<h2 class='class5-tag'>7.7.1</h2>Does the overview specify which suppliers are used for each product?",
+    "position": 26,
+    "id": "foot_7_1",
+    "required": true,
+    "hidden": true,
+    "style": "class4-regular childBackground childBackground--first",
+    "revealed": "pages['vf_leather-facility_information1'].answers['foot_7'].answer === 1",
+    "rfi_options_id": "5c40bcb05166f6abf0c397ce",
+    "options": {
+      "1": {
+        "value": 1,
+        "display": "Yes"
+      },
+      "2": {
+        "value": 2,
+        "display": "No"
+      }
+    }
+  },
+  {
+    "type": "file",
+    "name": "<h2 class='class5-tag'>7.7.2</h2>Upload the VF overview document",
+    "position": 27,
+    "id": "foot_7_a",
+    "required": true,
+    "hidden": true,
+    "style": "class4-regular childBackground childBackground--last",
+    "revealed": "pages['vf_leather-facility_information1'].answers['foot_7'].answer === 1",
+    "category": "excel/doc/pdf/images"
+  },
+  {
+    "type": "radiooptions",
+    "name": "<h2 class='class5-tag'>7.8</h2>Does the Footwear Manufacturer have the ability to trace the qualified products for VF Corporation in production at any time?",
+    "position": 28,
+    "id": "foot_8",
+    "required": true,
+    "hidden": true,
+    "style": "class3-blackbold",
+    "revealed": "pages['vf_leather-facility_information1'].answers['foot_yn'].answer === 1",
+    "rfi_options_id": "5c40bcb05166f6abf0c397ce",
+    "options": {
+      "1": {
+        "value": 1,
+        "display": "Yes"
+      },
+      "2": {
+        "value": 2,
+        "display": "No"
+      }
+    }
+  },
+  {
+    "type": "dropdown",
+    "name": "<h2 class='class5-tag'>8.1.1</h2>Material Type",
+    "position": 30,
+    "id": "fin_1",
+    "required": true,
+    "hidden": true,
+    "style": "class3-blackbold",
+    "revealed": "pages['vf_leather-facility_information2'].answers['fin_yn'].answer === 1",
+    "rfi_options_id": "5c40bcb05166f6abf0c397d0",
+    "options": {
+      "1": {
+        "value": 1,
+        "display": "Full Grain"
+      },
+      "2": {
+        "value": 2,
+        "display": "Outsole"
+      },
+      "3": {
+        "value": 3,
+        "display": "Patch"
+      },
+      "4": {
+        "value": 4,
+        "display": "Welt"
+      },
+      "5": {
+        "value": 5,
+        "display": "Lining"
+      },
+      "6": {
+        "value": 6,
+        "display": "Nubuck"
+      },
+      "7": {
+        "value": 7,
+        "display": "PU Coated"
+      },
+      "8": {
+        "value": 8,
+        "display": "Split"
+      },
+      "9": {
+        "value": 9,
+        "display": "Suede"
+      }
+    }
+  },
+  {
+    "type": "dropdown",
+    "name": "<h2 class='class5-tag'>8.1.2</h2>Leather Material Composition",
+    "position": 31,
+    "id": "fin_2",
+    "required": true,
+    "hidden": true,
+    "style": "class3-blackbold",
+    "revealed": "pages['vf_leather-facility_information2'].answers['fin_yn'].answer === 1",
+    "rfi_options_id": "5c40bcb05166f6abf0c397d8",
+    "options": {
+      "1": {
+        "value": 1,
+        "display": "Cow"
+      },
+      "2": {
+        "value": 2,
+        "display": "Calf"
+      },
+      "3": {
+        "value": 3,
+        "display": "Horse"
+      },
+      "4": {
+        "value": 4,
+        "display": "Goat"
+      },
+      "5": {
+        "value": 5,
+        "display": "Pig"
+      },
+      "6": {
+        "value": 6,
+        "display": "Lamb"
+      },
+      "7": {
+        "value": 7,
+        "display": "Buffalo"
+      },
+      "8": {
+        "value": 8,
+        "display": "Sheep"
+      }
+    }
+  },
+  {
+    "type": "checkbox",
+    "name": "<h2 class='class5-tag'>8.1.3</h2>VF Branded Service for this Material",
+    "position": 32,
+    "id": "fin_3",
+    "required": true,
+    "hidden": true,
+    "style": "class3-blackbold",
+    "revealed": "pages['vf_leather-facility_information2'].answers['fin_yn'].answer === 1",
+    "rfi_options_id": "5c40bcb05166f6abf0c397d4",
+    "options": {
+      "1": {
+        "value": 1,
+        "display": "Vans"
+      },
+      "2": {
+        "value": 2,
+        "display": "Timberland"
+      },
+      "3": {
+        "value": 3,
+        "display": "The North Face"
+      },
+      "4": {
+        "value": 4,
+        "display": "Kodiak"
+      },
+      "5": {
+        "value": 5,
+        "display": "Terra"
+      }
+    }
+  },
+  {
+    "type": "text",
+    "name": "<h2 class='class5-tag'>8.1.4</h2>Total Annual Quantity of Material Produced for our Brand in 2017 (SQ. FT.)",
+    "position": 33,
+    "id": "fin_4",
+    "required": true,
+    "hidden": true,
+    "style": "class3-blackbold",
+    "revealed": "pages['vf_leather-facility_information2'].answers['fin_yn'].answer === 1",
+    "category": "number",
+    "min": null,
+    "max": null,
+    "step": null
+  },
+  {
+    "type": "text",
+    "name": "<h2 class='class5-tag'>8.1.5</h2>2017 Estimated Annual Turnover for Total Quantity (USD)",
+    "position": 34,
+    "id": "fin_5",
+    "required": true,
+    "hidden": true,
+    "style": "class3-blackbold",
+    "revealed": "pages['vf_leather-facility_information2'].answers['fin_yn'].answer === 1",
+    "category": "number",
+    "min": null,
+    "max": null,
+    "step": null
+  },
+  {
+    "type": "radiooptions",
+    "name": "<h2 class='class5-tag'>8.2</h2>Does the Finishing Tannery have LWG certification?",
+    "position": 35,
+    "id": "fin_6",
+    "required": true,
+    "hidden": true,
+    "style": "class3-blackbold",
+    "revealed": "pages['vf_leather-facility_information2'].answers['fin_yn'].answer === 1",
+    "rfi_options_id": "5c40bcb05166f6abf0c397ce",
+    "options": {
+      "1": {
+        "value": 1,
+        "display": "Yes"
+      },
+      "2": {
+        "value": 2,
+        "display": "No"
+      }
+    }
+  },
+  {
+    "type": "radiooptions",
+    "name": "<h2 class='class5-tag'>8.2.1</h2>What rating has the Finishing Tannery earned?",
+    "position": 36,
+    "id": "fin_6_1_yes",
+    "required": true,
+    "hidden": true,
+    "style": "class4-regular childBackground childBackground--first",
+    "revealed": "pages['vf_leather-facility_information2'].answers['fin_6'].answer === 1",
+    "rfi_options_id": "5c40bcb05166f6abf0c397d2",
+    "options": {
+      "1": {
+        "value": 1,
+        "display": "Gold"
+      },
+      "2": {
+        "value": 2,
+        "display": "Silver"
+      },
+      "3": {
+        "value": 3,
+        "display": "Bronze"
+      }
+    }
+  },
+  {
+    "type": "file",
+    "name": "<h2 class='class5-tag'>8.2.1.1</h2>Upload the Finishing Tannery's LWG certificate",
+    "position": 37,
+    "id": "fin_6_a",
+    "required": true,
+    "hidden": true,
+    "style": "class4-regular childBackground childBackground--last",
+    "revealed": "pages['vf_leather-facility_information2'].answers['fin_6'].answer === 1",
+    "category": "excel/doc/pdf/images"
+  },
+  {
+    "type": "radiooptions",
+    "name": "<h2 class='class5-tag'>8.2.2</h2>Is the Finishing Tannery in the process of getting the certification within a year?",
+    "position": 38,
+    "id": "fin_6_1_no",
+    "required": true,
+    "hidden": true,
+    "style": "class4-regular childBackground childBackground--firstlast",
+    "revealed": "pages['vf_leather-facility_information2'].answers['fin_6'].answer === 2",
+    "rfi_options_id": "5c40bcb05166f6abf0c397ce",
+    "options": {
+      "1": {
+        "value": 1,
+        "display": "Yes"
+      },
+      "2": {
+        "value": 2,
+        "display": "No"
+      }
+    }
+  },
+  {
+    "type": "radiooptions",
+    "name": "<h2 class='class5-tag'>8.2.3</h2>Does the Finishing Tannery have Brazilian Leather Certification of Sustainability (CSCB)? ",
+    "position": 39,
+    "id": "fin_10",
+    "required": true,
+    "hidden": true,
+    "style": "class3-blackbold",
+    "revealed": "pages['vf_leather-facility_information2'].answers['fin_yn'].answer === 1 && pages['vf_leather-facility_information0'].answers['facility_country'].answer === 30",
+    "rfi_options_id": "5c40bcb05166f6abf0c397ce",
+    "options": {
+      "1": {
+        "value": 1,
+        "display": "Yes"
+      },
+      "2": {
+        "value": 2,
+        "display": "No"
+      }
+    }
+  },
+  {
+    "type": "file",
+    "name": "<h2 class='class5-tag'>8.2.3.1</h2>Upload the CSCB certification",
+    "position": 40,
+    "id": "fin_10_a",
+    "required": true,
+    "hidden": true,
+    "style": "class4-regular childBackground childBackground--firstlast",
+    "revealed": "pages['vf_leather-facility_information2'].answers['fin_10'].answer === 1",
+    "category": "excel/doc/pdf/images"
+  },
+  {
+    "type": "radiooptions",
+    "name": "<h2 class='class5-tag'>8.3</h2>Does the Finishing Tannery have a segregation system to prevent commingling, and to separately register hides for VF Corporation production?",
+    "position": 41,
+    "id": "fin_7",
+    "required": true,
+    "hidden": true,
+    "style": "class3-blackbold",
+    "revealed": "pages['vf_leather-facility_information2'].answers['fin_yn'].answer === 1",
+    "rfi_options_id": "5c40bcb05166f6abf0c397ce",
+    "options": {
+      "1": {
+        "value": 1,
+        "display": "Yes"
+      },
+      "2": {
+        "value": 2,
+        "display": "No"
+      }
+    }
+  },
+  {
+    "type": "radiooptions",
+    "name": "<h2 class='class5-tag'>8.4</h2>Does the Finishing Tannery have an appointed person responsible to work on Traceability/ LWG + Traceability who is aware of his/her responsibilities and ensures compliance?",
+    "position": 42,
+    "id": "fin_8",
+    "required": true,
+    "hidden": true,
+    "style": "class3-blackbold",
+    "revealed": "pages['vf_leather-facility_information2'].answers['fin_yn'].answer === 1",
+    "rfi_options_id": "5c40bcb05166f6abf0c397ce",
+    "options": {
+      "1": {
+        "value": 1,
+        "display": "Yes"
+      },
+      "2": {
+        "value": 2,
+        "display": "No"
+      }
+    }
+  },
+  {
+    "type": "radiooptions",
+    "name": "<h2 class='class5-tag'>8.5</h2>Does the Finishing Tannery have the ability to trace the qualified products for VF Corporation in production at any time?",
+    "position": 43,
+    "id": "fin_9",
+    "required": true,
+    "hidden": true,
+    "style": "class3-blackbold",
+    "revealed": "pages['vf_leather-facility_information2'].answers['fin_yn'].answer === 1",
+    "rfi_options_id": "5c40bcb05166f6abf0c397ce",
+    "options": {
+      "1": {
+        "value": 1,
+        "display": "Yes"
+      },
+      "2": {
+        "value": 2,
+        "display": "No"
+      }
+    }
+  },
+  {
+    "type": "radiooptions",
+    "name": "<h2 class='class5-tag'>9.1</h2>Does the Wet Blue Tannery maintain a detailed description linked to each lot/batch/shipment to the tannery? ",
+    "position": 45,
+    "id": "wet_1",
+    "required": true,
+    "hidden": true,
+    "style": "class3-blackbold",
+    "revealed": "pages['vf_leather-facility_information3'].answers['wet_yn'].answer === 1",
+    "rfi_options_id": "5c40bcb05166f6abf0c397ce",
+    "options": {
+      "1": {
+        "value": 1,
+        "display": "Yes"
+      },
+      "2": {
+        "value": 2,
+        "display": "No"
+      }
+    }
+  },
+  {
+    "type": "file",
+    "name": "<h2 class='class5-tag'>9.2</h2>Upload a sample invoice or equivalent documentation with shipment details",
+    "position": 46,
+    "id": "wet_2_a",
+    "required": true,
+    "hidden": true,
+    "style": "class3-blackbold",
+    "revealed": "pages['vf_leather-facility_information3'].answers['wet_yn'].answer === 1",
+    "category": "excel/doc/pdf/images"
+  },
+  {
+    "type": "radiooptions",
+    "name": "<h2 class='class5-tag'>9.2.1</h2>Does the sample invoice or equivalent certificate have the details of the supplier; such as the name, address, and internal identification code?",
+    "position": 47,
+    "id": "wet_2_1",
+    "required": true,
+    "hidden": true,
+    "style": "class3-blackbold--dense",
+    "revealed": "pages['vf_leather-facility_information3'].answers['wet_yn'].answer === 1",
+    "rfi_options_id": "5c40bcb05166f6abf0c397ce",
+    "options": {
+      "1": {
+        "value": 1,
+        "display": "Yes"
+      },
+      "2": {
+        "value": 2,
+        "display": "No"
+      }
+    }
+  },
+  {
+    "type": "radiooptions",
+    "name": "<h2 class='class5-tag'>9.2.2</h2>Does the sample invoice or equivalent certificate include the date(s) of slaughter?",
+    "position": 48,
+    "id": "wet_2_2",
+    "required": true,
+    "hidden": true,
+    "style": "class3-blackbold--dense",
+    "revealed": "pages['vf_leather-facility_information3'].answers['wet_yn'].answer === 1",
+    "rfi_options_id": "5c40bcb05166f6abf0c397ce",
+    "options": {
+      "1": {
+        "value": 1,
+        "display": "Yes"
+      },
+      "2": {
+        "value": 2,
+        "display": "No"
+      }
+    }
+  },
+  {
+    "type": "radiooptions",
+    "name": "<h2 class='class5-tag'>9.2.3</h2>Does the sample invoice or equivalent certificate include the number of hides?",
+    "position": 49,
+    "id": "wet_2_3",
+    "required": true,
+    "hidden": true,
+    "style": "class3-blackbold--dense",
+    "revealed": "pages['vf_leather-facility_information3'].answers['wet_yn'].answer === 1",
+    "rfi_options_id": "5c40bcb05166f6abf0c397ce",
+    "options": {
+      "1": {
+        "value": 1,
+        "display": "Yes"
+      },
+      "2": {
+        "value": 2,
+        "display": "No"
+      }
+    }
+  },
+  {
+    "type": "radiooptions",
+    "name": "<h2 class='class5-tag'>9.2.4</h2>Does the sample invoice or equivalent certificate include the intended customer (for qualified customers)?",
+    "position": 50,
+    "id": "wet_2_4",
+    "required": true,
+    "hidden": true,
+    "style": "class3-blackbold--dense",
+    "revealed": "pages['vf_leather-facility_information3'].answers['wet_yn'].answer === 1",
+    "rfi_options_id": "5c40bcb05166f6abf0c397ce",
+    "options": {
+      "1": {
+        "value": 1,
+        "display": "Yes"
+      },
+      "2": {
+        "value": 2,
+        "display": "No"
+      }
+    }
+  },
+  {
+    "type": "radiooptions",
+    "name": "<h2 class='class5-tag'>9.3</h2>Does the Wet Blue Tannery have LWG certification? ",
+    "position": 51,
+    "id": "wet_3",
+    "required": true,
+    "hidden": true,
+    "style": "class3-blackbold",
+    "revealed": "pages['vf_leather-facility_information3'].answers['wet_yn'].answer === 1",
+    "rfi_options_id": "5c40bcb05166f6abf0c397ce",
+    "options": {
+      "1": {
+        "value": 1,
+        "display": "Yes"
+      },
+      "2": {
+        "value": 2,
+        "display": "No"
+      }
+    }
+  },
+  {
+    "type": "radiooptions",
+    "name": "<h2 class='class5-tag'>9.3.1</h2>What rating has the Wet Blue Tannery earned?",
+    "position": 52,
+    "id": "wet_3_1_yes",
+    "required": true,
+    "hidden": true,
+    "style": "class4-regular childBackground childBackground--first",
+    "revealed": "pages['vf_leather-facility_information3'].answers['wet_3'].answer === 1",
+    "rfi_options_id": "5c40bcb05166f6abf0c397d2",
+    "options": {
+      "1": {
+        "value": 1,
+        "display": "Gold"
+      },
+      "2": {
+        "value": 2,
+        "display": "Silver"
+      },
+      "3": {
+        "value": 3,
+        "display": "Bronze"
+      }
+    }
+  },
+  {
+    "type": "file",
+    "name": "<h2 class='class5-tag'>9.3.1.1</h2>Upload the Wet Blue Tannery's LWG certificate",
+    "position": 53,
+    "id": "wet_3_a",
+    "required": true,
+    "hidden": true,
+    "style": "class4-regular childBackground childBackground--last",
+    "revealed": "pages['vf_leather-facility_information3'].answers['wet_3'].answer === 1",
+    "category": "excel/doc/pdf/images"
+  },
+  {
+    "type": "radiooptions",
+    "name": "<h2 class='class5-tag'>9.3.2</h2>Is the Wet Blue Tannery in the process of getting the certification within a year?",
+    "position": 54,
+    "id": "wet_3_1_no",
+    "required": true,
+    "hidden": true,
+    "style": "class4-regular childBackground childBackground--firstlast",
+    "revealed": "pages['vf_leather-facility_information3'].answers['wet_3'].answer === 2",
+    "rfi_options_id": "5c40bcb05166f6abf0c397ce",
+    "options": {
+      "1": {
+        "value": 1,
+        "display": "Yes"
+      },
+      "2": {
+        "value": 2,
+        "display": "No"
+      }
+    }
+  },
+  {
+    "type": "radiooptions",
+    "name": "<h2 class='class5-tag'>9.4</h2>Does the Wet Blue Tannery have a segregation system to prevent commingling, and to separately register hides for VF Corporation production?",
+    "position": 55,
+    "id": "wet_4",
+    "required": true,
+    "hidden": true,
+    "style": "class3-blackbold",
+    "revealed": "pages['vf_leather-facility_information3'].answers['wet_yn'].answer === 1",
+    "rfi_options_id": "5c40bcb05166f6abf0c397ce",
+    "options": {
+      "1": {
+        "value": 1,
+        "display": "Yes"
+      },
+      "2": {
+        "value": 2,
+        "display": "No"
+      }
+    }
+  },
+  {
+    "type": "radiooptions",
+    "name": "<h2 class='class5-tag'>9.5</h2>Does the Wet Blue Tannery stamp incoming hides with a code that links it back to the slaughterhouse from which the animals were slaughtered?",
+    "position": 56,
+    "id": "wet_5",
+    "required": true,
+    "hidden": true,
+    "style": "class3-blackbold",
+    "revealed": "pages['vf_leather-facility_information3'].answers['wet_yn'].answer === 1",
+    "rfi_options_id": "5c40bcb05166f6abf0c397ce",
+    "options": {
+      "1": {
+        "value": 1,
+        "display": "Yes"
+      },
+      "2": {
+        "value": 2,
+        "display": "No"
+      }
+    }
+  },
+  {
+    "type": "radiooptions",
+    "name": "<h2 class='class5-tag'>9.5.1</h2>Does the Wet Blue Tannery maintain a document that explains the code and links it with the slaughterhouses in your supply chain?",
+    "position": 57,
+    "id": "wet_5_1",
+    "required": true,
+    "hidden": true,
+    "style": "class4-regular childBackground childBackground--first",
+    "revealed": "pages['vf_leather-facility_information3'].answers['wet_5'].answer === 1",
+    "rfi_options_id": "5c40bcb05166f6abf0c397ce",
+    "options": {
+      "1": {
+        "value": 1,
+        "display": "Yes"
+      },
+      "2": {
+        "value": 2,
+        "display": "No"
+      }
+    }
+  },
+  {
+    "type": "radiooptions",
+    "name": "<h2 class='class5-tag'>9.5.2</h2>Does the code that is stamped on the hide/ leather help determine the date on which animals were slaughtered?",
+    "position": 58,
+    "id": "wet_5_2",
+    "required": true,
+    "hidden": true,
+    "style": "class4-regular childBackground childBackground--last",
+    "revealed": "pages['vf_leather-facility_information3'].answers['wet_5'].answer === 1",
+    "rfi_options_id": "5c40bcb05166f6abf0c397ce",
+    "options": {
+      "1": {
+        "value": 1,
+        "display": "Yes"
+      },
+      "2": {
+        "value": 2,
+        "display": "No"
+      }
+    }
+  },
+  {
+    "type": "radiooptions",
+    "name": "<h2 class='class5-tag'>9.6</h2>Does the Wet Blue Tannery have an appointed person responsible to work on Traceability/ LWG + Traceability who is aware of his/her responsibilities and ensures compliance?",
+    "position": 59,
+    "id": "wet_6",
+    "required": true,
+    "hidden": true,
+    "style": "class3-blackbold",
+    "revealed": "pages['vf_leather-facility_information3'].answers['wet_yn'].answer === 1",
+    "rfi_options_id": "5c40bcb05166f6abf0c397ce",
+    "options": {
+      "1": {
+        "value": 1,
+        "display": "Yes"
+      },
+      "2": {
+        "value": 2,
+        "display": "No"
+      }
+    }
+  },
+  {
+    "type": "radiooptions",
+    "name": "<h2 class='class5-tag'>9.7</h2>Does the Wet Blue Tannery have Brazilian Leather Certification of Sustainability (CSCB)? ",
+    "position": 60,
+    "id": "wet_7",
+    "required": true,
+    "hidden": true,
+    "style": "class3-blackbold",
+    "revealed": "pages['vf_leather-facility_information3'].answers['wet_yn'].answer === 1 && pages['vf_leather-facility_information0'].answers['facility_country'].answer === 30",
+    "rfi_options_id": "5c40bcb05166f6abf0c397ce",
+    "options": {
+      "1": {
+        "value": 1,
+        "display": "Yes"
+      },
+      "2": {
+        "value": 2,
+        "display": "No"
+      }
+    }
+  },
+  {
+    "type": "file",
+    "name": "<h2 class='class5-tag'>9.7.1</h2>Upload the CSCB certification",
+    "position": 61,
+    "id": "wet_7_a",
+    "required": true,
+    "hidden": true,
+    "style": "class4-regular childBackground childBackground--firstlast",
+    "revealed": "pages['vf_leather-facility_information3'].answers['wet_7'].answer === 1",
+    "category": "excel/doc/pdf/images"
+  },
+  {
+    "type": "radiooptions",
+    "name": "<h2 class='class5-tag'>10.1</h2>Does the slaughterhouse maintain a list of suppliers? ",
+    "position": 63,
+    "id": "slaught_1",
+    "required": true,
+    "hidden": true,
+    "style": "class3-blackbold",
+    "revealed": "pages['vf_leather-facility_information4'].answers['slaught_yn'].answer === 1",
+    "rfi_options_id": "5c40bcb05166f6abf0c397ce",
+    "options": {
+      "1": {
+        "value": 1,
+        "display": "Yes"
+      },
+      "2": {
+        "value": 2,
+        "display": "No"
+      }
+    }
+  },
+  {
+    "type": "file",
+    "name": "<h2 class='class5-tag'>10.2</h2>Upload one sample Invoice or Purchase Order per supplier",
+    "position": 64,
+    "id": "slaught_1_a_global",
+    "required": true,
+    "hidden": true,
+    "style": "class3-blackbold",
+    "revealed": "pages['vf_leather-facility_information4'].answers['slaught_yn'].answer === 1 && pages['vf_leather-facility_information0'].answers['facility_country'].answer!== 30",
+    "category": "excel/doc/pdf/images"
+  },
+  {
+    "type": "file",
+    "name": "<h2 class='class5-tag'>10.2</h2>Upload a CAR certificate or equivalent farm registration system certificate",
+    "position": 65,
+    "id": "slaught_1_a_brazil",
+    "required": true,
+    "hidden": true,
+    "style": "class3-blackbold",
+    "revealed": "pages['vf_leather-facility_information4'].answers['slaught_yn'].answer === 1 && pages['vf_leather-facility_information0'].answers['facility_country'].answer === 30",
+    "category": "excel/doc/pdf/images"
+  },
+  {
+    "type": "radiooptions",
+    "name": "<h2 class='class5-tag'>10.2.1</h2>Does the slaughterhouse CAR certificate or equivalent farm registration system certificate of the farm include a contact person of the farm?",
+    "position": 66,
+    "id": "slaught_1_1",
+    "required": true,
+    "hidden": true,
+    "style": "class3-blackbold",
+    "revealed": "pages['vf_leather-facility_information4'].answers['slaught_yn'].answer === 1 && pages['vf_leather-facility_information0'].answers['facility_country'].answer === 30",
+    "rfi_options_id": "5c40bcb05166f6abf0c397ce",
+    "options": {
+      "1": {
+        "value": 1,
+        "display": "Yes"
+      },
+      "2": {
+        "value": 2,
+        "display": "No"
+      }
+    }
+  },
+  {
+    "type": "radiooptions",
+    "name": "<h2 class='class5-tag'>10.2.2</h2>Does the slaughterhouse CAR certificate or equivalent farm registration system certificate of the farm include internal individual codes or names for each supplier used to identify them during processes?",
+    "position": 67,
+    "id": "slaught_1_2",
+    "required": true,
+    "hidden": true,
+    "style": "class3-blackbold",
+    "revealed": "pages['vf_leather-facility_information4'].answers['slaught_yn'].answer === 1 && pages['vf_leather-facility_information0'].answers['facility_country'].answer === 30",
+    "rfi_options_id": "5c40bcb05166f6abf0c397ce",
+    "options": {
+      "1": {
+        "value": 1,
+        "display": "Yes"
+      },
+      "2": {
+        "value": 2,
+        "display": "No"
+      }
+    }
+  },
+  {
+    "type": "radiooptions",
+    "name": "<h2 class='class5-tag'>10.3</h2>Does the slaughterhouse have a procedure in place to ensure the slaughterhouse is not sourcing from farms involved in slave labour, invasion of indigenous lands and protected areas.",
+    "position": 68,
+    "id": "slaught_2_1_global",
+    "required": true,
+    "hidden": true,
+    "style": "class3-blackbold",
+    "revealed": "pages['vf_leather-facility_information4'].answers['slaught_yn'].answer === 1 && pages['vf_leather-facility_information0'].answers['facility_country'].answer!== 30",
+    "rfi_options_id": "5c40bcb05166f6abf0c397ce",
+    "options": {
+      "1": {
+        "value": 1,
+        "display": "Yes"
+      },
+      "2": {
+        "value": 2,
+        "display": "No"
+      }
+    }
+  },
+  {
+    "type": "radiooptions",
+    "name": "<h2 class='class5-tag'>10.3</h2>Does the slaughterhouse have a procedure in place to ensure the slaughterhouse is not sourcing from farms involved in slave labour, invasion of indigenous lands and protected areas, or farms included in IBAMA's embargo list?",
+    "position": 69,
+    "id": "slaught_2_1_brazil",
+    "required": true,
+    "hidden": true,
+    "style": "class3-blackbold",
+    "revealed": "pages['vf_leather-facility_information4'].answers['slaught_yn'].answer === 1 && pages['vf_leather-facility_information0'].answers['facility_country'].answer === 30",
+    "rfi_options_id": "5c40bcb05166f6abf0c397ce",
+    "options": {
+      "1": {
+        "value": 1,
+        "display": "Yes"
+      },
+      "2": {
+        "value": 2,
+        "display": "No"
+      }
+    }
+  },
+  {
+    "type": "radiooptions",
+    "name": "<h2 class='class5-tag'>10.3.1</h2>Have any of the farms been involved in any form of deforestation in the Amazon biome since October 05, 2009?",
+    "position": 70,
+    "id": "slaught_2_2",
+    "required": true,
+    "hidden": true,
+    "style": "class3-blackbold",
+    "revealed": "pages['vf_leather-facility_information4'].answers['slaught_yn'].answer === 1 && pages['vf_leather-facility_information0'].answers['facility_country'].answer === 30",
+    "rfi_options_id": "5c40bcb05166f6abf0c397ce",
+    "options": {
+      "1": {
+        "value": 1,
+        "display": "Yes"
+      },
+      "2": {
+        "value": 2,
+        "display": "No"
+      }
+    }
+  },
+  {
+    "type": "radiooptions",
+    "name": "<h2 class='class5-tag'>10.4</h2>Does the slaughterhouse monitor and record the location of farms its sourcing from?",
+    "position": 71,
+    "id": "slaught_2",
+    "required": true,
+    "hidden": true,
+    "style": "class3-blackbold",
+    "revealed": "pages['vf_leather-facility_information4'].answers['slaught_yn'].answer === 1",
+    "rfi_options_id": "5c40bcb05166f6abf0c397ce",
+    "options": {
+      "1": {
+        "value": 1,
+        "display": "Yes"
+      },
+      "2": {
+        "value": 2,
+        "display": "No"
+      }
+    }
+  },
+  {
+    "type": "file",
+    "name": "<h2 class='class5-tag'>10.4.1</h2>Upload a spreadsheet with a list of all farmer IDs and addresses",
+    "position": 72,
+    "id": "slaught_2_file",
+    "required": true,
+    "hidden": true,
+    "style": "class4-regular childBackground childBackground--firstlast",
+    "revealed": "pages['vf_leather-facility_information4'].answers['slaught_2'].answer === 1",
+    "category": "excel/doc/pdf/images"
+  },
+  {
+    "type": "radiooptions",
+    "name": "<h2 class='class5-tag'>10.5</h2>Does the slaughterhouse operate in full compliance with all national and international legislations related to the handling and slaughtering of animals?",
+    "position": 73,
+    "id": "slaught_3_global",
+    "required": true,
+    "hidden": true,
+    "style": "class3-blackbold",
+    "revealed": "pages['vf_leather-facility_information4'].answers['slaught_yn'].answer === 1 && pages['vf_leather-facility_information0'].answers['facility_country'].answer!== 30",
+    "rfi_options_id": "5c40bcb05166f6abf0c397ce",
+    "options": {
+      "1": {
+        "value": 1,
+        "display": "Yes"
+      },
+      "2": {
+        "value": 2,
+        "display": "No"
+      }
+    }
+  },
+  {
+    "type": "radiooptions",
+    "name": "<h2 class='class5-tag'>10.5</h2>Does the slaughterhouse operate in full compliance with all national legislations (Normative Instruction 03/2000) related to the handling and slaughtering of animals?",
+    "position": 74,
+    "id": "slaught_3_brazil",
+    "required": true,
+    "hidden": true,
+    "style": "class3-blackbold",
+    "revealed": "pages['vf_leather-facility_information4'].answers['slaught_yn'].answer === 1 && pages['vf_leather-facility_information0'].answers['facility_country'].answer === 30",
+    "rfi_options_id": "5c40bcb05166f6abf0c397ce",
+    "options": {
+      "1": {
+        "value": 1,
+        "display": "Yes"
+      },
+      "2": {
+        "value": 2,
+        "display": "No"
+      }
+    }
+  },
+  {
+    "type": "radiooptions",
+    "name": "<h2 class='class5-tag'>10.6</h2>Does the slaughterhouse have a procedure in place to ensure that all employees have the relevant skills and competencies to handle animals and to be involved in humane killing of animals?",
+    "position": 75,
+    "id": "slaught_4",
+    "required": true,
+    "hidden": true,
+    "style": "class3-blackbold",
+    "revealed": "pages['vf_leather-facility_information4'].answers['slaught_yn'].answer === 1",
+    "rfi_options_id": "5c40bcb05166f6abf0c397ce",
+    "options": {
+      "1": {
+        "value": 1,
+        "display": "Yes"
+      },
+      "2": {
+        "value": 2,
+        "display": "No"
+      }
+    }
+  },
+  {
+    "type": "radiooptions",
+    "name": "<h2 class='class5-tag'>10.6.1</h2>Does the slaughterhouse have signed training records that are available for everyone involved in animal handling or sufficient practical experience that can be proved?",
+    "position": 76,
+    "id": "slaught_4_1",
+    "required": true,
+    "hidden": true,
+    "style": "class4-regular childBackground childBackground--firstlast",
+    "revealed": "pages['vf_leather-facility_information4'].answers['slaught_yn'].answer === 1 && pages['vf_leather-facility_information4'].answers['slaught_4'].answer === 1",
+    "rfi_options_id": "5c40bcb05166f6abf0c397ce",
+    "options": {
+      "1": {
+        "value": 1,
+        "display": "Yes"
+      },
+      "2": {
+        "value": 2,
+        "display": "No"
+      }
+    }
+  },
+  {
+    "type": "radiooptions",
+    "name": "<h2 class='class5-tag'>10.7</h2>Does the slaughterhouse have procedure in place to ensure that the handling and movement of animals is minimised?",
+    "position": 77,
+    "id": "slaught_5",
+    "required": true,
+    "hidden": true,
+    "style": "class3-blackbold",
+    "revealed": "pages['vf_leather-facility_information4'].answers['slaught_yn'].answer === 1",
+    "rfi_options_id": "5c40bcb05166f6abf0c397ce",
+    "options": {
+      "1": {
+        "value": 1,
+        "display": "Yes"
+      },
+      "2": {
+        "value": 2,
+        "display": "No"
+      }
+    }
+  },
+  {
+    "type": "radiooptions",
+    "name": "<h2 class='class5-tag'>10.8</h2>Does the slaughterhouse maintain a list of transportation companies used for each day or batch of live animals?",
+    "position": 78,
+    "id": "slaught_5_1",
+    "required": true,
+    "hidden": true,
+    "style": "class3-blackbold",
+    "revealed": "pages['vf_leather-facility_information4'].answers['slaught_yn'].answer === 1",
+    "rfi_options_id": "5c40bcb05166f6abf0c397ce",
+    "options": {
+      "1": {
+        "value": 1,
+        "display": "Yes"
+      },
+      "2": {
+        "value": 2,
+        "display": "No"
+      }
+    }
+  },
+  {
+    "type": "radiooptions",
+    "name": "<h2 class='class5-tag'>10.9</h2>Does the slaughterhouse have health certificates for all purchased animals?",
+    "position": 79,
+    "id": "slaught_7",
+    "required": true,
+    "hidden": true,
+    "style": "class3-blackbold",
+    "revealed": "pages['vf_leather-facility_information4'].answers['slaught_yn'].answer === 1",
+    "rfi_options_id": "5c40bcb05166f6abf0c397ce",
+    "options": {
+      "1": {
+        "value": 1,
+        "display": "Yes"
+      },
+      "2": {
+        "value": 2,
+        "display": "No"
+      }
+    }
+  },
+  {
+    "type": "radiooptions",
+    "name": "<h2 class='class5-tag'>10.9.1</h2>Are those certificates available upon request?",
+    "position": 80,
+    "id": "slaught_7_1",
+    "required": true,
+    "hidden": true,
+    "style": "class4-regular childBackground childBackground--firstlast",
+    "revealed": "pages['vf_leather-facility_information4'].answers['slaught_7'].answer === 1",
+    "rfi_options_id": "5c40bcb05166f6abf0c397ce",
+    "options": {
+      "1": {
+        "value": 1,
+        "display": "Yes"
+      },
+      "2": {
+        "value": 2,
+        "display": "No"
+      }
+    }
+  },
+  {
+    "type": "radiooptions",
+    "name": "<h2 class='class5-tag'>10.10</h2>Do the slaughterhouses ensure that their transport companies are in compliance with the OIE requirements for transport related to planning, minimal distraction, animal behaviour and clear responsibilities <a href=\"http://www.oie.int/animal-welfare/oie-standards-and-international-trade\" target=\"_blank\" rel=\"noopener noreferrer\">(click here for OIE requirements)</a>?",
+    "position": 81,
+    "id": "slaught_6",
+    "required": true,
+    "hidden": true,
+    "style": "class3-blackbold",
+    "revealed": "pages['vf_leather-facility_information4'].answers['slaught_yn'].answer === 1",
+    "rfi_options_id": "5c40bcb05166f6abf0c397ce",
+    "options": {
+      "1": {
+        "value": 1,
+        "display": "Yes"
+      },
+      "2": {
+        "value": 2,
+        "display": "No"
+      }
+    }
+  },
+  {
+    "type": "radiooptions",
+    "name": "<h2 class='class5-tag'>10.11</h2>Do the slaughterhouses' transport companies use a GTA (Animal Transport Guide)? ",
+    "position": 82,
+    "id": "slaught_5_2",
+    "required": true,
+    "hidden": true,
+    "style": "class3-blackbold",
+    "revealed": "pages['vf_leather-facility_information4'].answers['slaught_yn'].answer === 1 && pages['vf_leather-facility_information0'].answers['facility_country'].answer === 30",
+    "rfi_options_id": "5c40bcb05166f6abf0c397ce",
+    "options": {
+      "1": {
+        "value": 1,
+        "display": "Yes"
+      },
+      "2": {
+        "value": 2,
+        "display": "No"
+      }
+    }
+  },
+  {
+    "type": "file",
+    "name": "<h2 class='class5-tag'>10.11.1</h2>Upload the most recent GTA from each farm the slaughterhouse is currently working with.",
+    "position": 83,
+    "id": "slaught_5_2_a",
+    "required": true,
+    "hidden": true,
+    "style": "class4-regular childBackground childBackground--firstlast",
+    "revealed": "pages['vf_leather-facility_information4'].answers['slaught_5_2'].answer === 1 ",
+    "category": "excel/doc/pdf/images"
+  }
+]
