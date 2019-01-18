@@ -17,7 +17,9 @@ let number;
 let parentChildRevealArray;
 let browser
 async function initScrape(){
+    console.log('initializing headless puppeteer... ( ͡° ͜ʖ ͡°)')
     browser = await pupp.launch({ headless: true });
+    console.log('launching browser page...')
     const page = await browser.newPage()
     await page.setViewport({ width: 1280, height: 1307 })
     events.forEach(eventType => {
@@ -30,31 +32,53 @@ async function initScrape(){
                 let rfiResponse = await eventFilterFunc.json().then(res => res).catch(e => console.error(e.message))
                 if(rfiResponse.hasOwnProperty('pages') && Array.isArray(rfiResponse.pages) && rfiResponse.pages.length > 0){
                     let components = await rfiResponse.pages.map(el => el.components)
+                    console.log('isolating response elements... (☞ﾟ∀ﾟ)☞')
                     await components.forEach((el) => {
                         for (const element in el) {
                             questionArray.push(el[element])
                         }
                     })
-                    questionArray.sort((a,b) => a.position - b.position);  
+                    console.log('sorting data...')
+                    questionArray.sort((a,b) => a.position - b.position);
+                    console.log('isolating hidden questions...')
                     hidden = await dynamicQuestionFilter(questionArray, 'hidden');
-                    
-                    fs.writeFile('test.json',JSON.stringify(hidden, null, 2), 'utf-8', function(err){
+                    console.log('isolating radio options questions...')
+                    radio = await dynamicQuestionFilter(questionArray,'radiooptions');
+                    console.log('isolating file upload questions...')
+                    file = await dynamicQuestionFilter(questionArray, 'file');
+                    console.log('isolating dropdowns questions...')
+                    dropdowns = await dynamicQuestionFilter(questionArray, 'dropdown');
+                    console.log('isolating hidden questions...')
+                    text = await dynamicQuestionFilter(questionArray, 'text');
+                    console.log('merging parent and children reveal questions... ლ(´ڡ`ლ)')
+                    parentChildRevealArray = await parentChildReveal(questionArray, hidden);
+                    console.log('prepping data to write... ᕦ(ò_óˇ)ᕤ')
+                    await fs.writeFile(
+                        'test.json',
+                        JSON.stringify({ 
+                            hidden, 
+                            radio, 
+                            file, 
+                            dropdowns, 
+                            text, 
+                            parentChildRevealArray, 
+                            questionArray 
+                            }, 
+                            null, 
+                            2), 
+                        'utf-8',
+                        function(err){
+                        console.log('writing...') 
                         if(err) {
-                            console.error(err.message, 'there was an error')
+                            console.error(err.message, 'there was an error... (╯°□°）╯︵ ┻━┻')
                         }
                         else{
-                            console.log('wrote data on a file')
+                            console.log('data is ready for use... (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧ ')
                         }
                     })
-                    radio = await dynamicQuestionFilter(questionArray,'radio');
-                    file = await dynamicQuestionFilter(questionArray, 'file');
-                    dropdowns = await dynamicQuestionFilter(questionArray, 'dropdown');
-                    number = await dynamicQuestionFilter(questionArray, 'text');
-                    
-                    parentChildRevealArray = await parentChildReveal(questionArray, hidden);
                 }
                 else {
-                    console.log('ಠ_ಠ ¯\_(ツ)_/¯ Nothing To See here ¯\_(ツ)_/¯ಠ_ಠ')
+                    console.log('¯\_(ツ)_/¯ silly urls ¯\_(ツ)_/¯')
                 }
             }
         }
@@ -199,6 +223,7 @@ async function initScrape(){
     // await page.waitFor(1000);
     // await page.click('#mat-slide-toggle-5 > label');
     // await page.waitFor(10000);
+    console.log('shutting down puppeteer... ʕ •ᴥ•ʔ')
     await browser.close()
 };
 initScrape()

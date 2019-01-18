@@ -13,7 +13,6 @@ module.exports = async function parentChildReveal(masterArray, hiddenQuestionsAr
         const children = hiddenQuestionMap.filter((question) => id === question.revealedBy);
         return { id, type, children }
     })
-    console.log(parentChildRevealArray.length === noDuplicateRevealed.length)
     return parentChildRevealArray
 }
 
