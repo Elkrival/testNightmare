@@ -9,8 +9,7 @@
       "hidden": true,
       "style": "class4-regular childBackground childBackground--first",
       "revealed": "pages['vf_leather-facility_information0'].answers['global_2'].answer === 1",
-      "category": "excel/doc/pdf/images",
-      "answer": {}
+      "category": "excel/doc/pdf/images"
     },
     {
       "type": "radiooptions",
@@ -1493,7 +1492,6 @@
       "required": true,
       "style": "class3-blackbold",
       "rfi_options_id": "5c40bcb05166f6abf0c397ce",
-      "answer": 1,
       "options": {
         "1": {
           "value": 1,
@@ -2852,8 +2850,7 @@
       "hidden": true,
       "style": "class4-regular childBackground childBackground--first",
       "revealed": "pages['vf_leather-facility_information0'].answers['global_2'].answer === 1",
-      "category": "excel/doc/pdf/images",
-      "answer": {}
+      "category": "excel/doc/pdf/images"
     },
     {
       "type": "file",
@@ -4144,7 +4141,6 @@
           "style": "class4-regular childBackground childBackground--first",
           "revealed": "pages['vf_leather-facility_information0'].answers['global_2'].answer === 1",
           "category": "excel/doc/pdf/images",
-          "answer": {},
           "revealedBy": "global_2"
         },
         {
@@ -6814,7 +6810,6 @@
       "required": true,
       "style": "class3-blackbold",
       "rfi_options_id": "5c40bcb05166f6abf0c397ce",
-      "answer": 1,
       "options": {
         "1": {
           "value": 1,
@@ -6835,8 +6830,7 @@
       "hidden": true,
       "style": "class4-regular childBackground childBackground--first",
       "revealed": "pages['vf_leather-facility_information0'].answers['global_2'].answer === 1",
-      "category": "excel/doc/pdf/images",
-      "answer": {}
+      "category": "excel/doc/pdf/images"
     },
     {
       "type": "radiooptions",
