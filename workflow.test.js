@@ -84,7 +84,19 @@ require('dotenv').config();
             })
         })
     })
-    describe('Survey Tests', ()=>{
+    if(Array.isArray(file) && file.length > 0) {
+        describe('file upload questions', () =>{
+            file.forEach(async(question) =>{
+                test('will be of file type', async() =>{
+                    await expect(question.type).toEqual('file')
+                })
+                test('will have a property of category', async() =>{
+                    await expect(question).toHaveProperty('category')
+                })
+            })
+        })
+    }
+    describe('RFI Answers', ()=>{
         jest.setTimeout(30000)
         beforeAll(async() =>{
             browser = await pupp.launch({ headless: true });
@@ -109,15 +121,17 @@ require('dotenv').config();
             await page.waitFor("#cdk-describedby-message-container");
             await page.click('#reset_answers')
     })
-    hidden.forEach(async(el) => {
-        it('will verify if hidden questions have rendered',async() =>{
-            let result = await page.evaluate((questionId) => {
-                return document.querySelector('#' + questionId)
-            }, el.id)
-            await expect(result).toBeFalsy()
+        hidden.forEach(async(el) => {
+            it('will verify if hidden questions have rendered',async() =>{
+                let result = await page.evaluate((questionId) => {
+                    return document.querySelector('#' + questionId)
+                }, el.id)
+                await expect(result).toBeFalsy()
+            })
         })
-    })
-
+        parentChildRevealArray.forEach(async(parent) =>{
+            
+        })
     afterAll(()=>{
         browser.close()
     })
