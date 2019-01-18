@@ -129,10 +129,55 @@ require('dotenv').config();
                 await expect(result).toBeFalsy()
             })
         })
-        parentChildRevealArray.forEach(async(parent) =>{
-            
+        parentChildRevealArray. forEach(async(parentQuestion) =>{
+            test('question should be answered based on type', async() =>{
+                let result = await questionFillOut(parentQuestion);
+                await expect(result).toBe(true)
+            })
         })
     afterAll(()=>{
         browser.close()
     })
+    async function questionFillOut(question) {
+        if(question.type === 'radiooptions') {
+            let yesOption = await page.evaluate((parentId) => {
+                return document.querySelector(`#${parentId}`).children[0].id
+            }, question.id)
+            await page.click(`#${yesOption} > label > div`)
+            let result = await questionEvaluator(yesOption, question.type)
+            return result
+        }
+        else if(question.type === 'dropdown') {
+            console.log('dropdown')
+        }
+        else if(question.type === 'file') {
+            console.log('file')
+        }
+        else if(question.type === 'text') {
+            console.log('text')
+        }
+        else {
+            console.error('question is missing type property... ¯\_(ツ)_/¯')
+        }
+    }
 })
+async function questionEvaluator(selector, questionType) {
+    if(questionType === 'radiooptions') {
+        let result = await page.evaluate((id) =>{
+            return document.getElementById(`${id}-input`).checked
+        }, selector)
+        return result
+    }
+    else if(questionType === 'dropdown ') {
+
+    }
+    else if (questionType === 'file') {
+
+    }
+    else if(questionTyep === 'text') {
+
+    }
+    else {
+        console.log('question does not have a type')
+    }
+}
