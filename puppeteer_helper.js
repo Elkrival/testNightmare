@@ -18,13 +18,14 @@ let parentChildRevealArray;
 let browser
 async function initScrape(){
     console.log('initializing headless puppeteer... ( ͡° ͜ʖ ͡°)')
-    browser = await pupp.launch({ headless: true });
+    browser = await pupp.launch({ headless: false });
     console.log('launching browser page...')
     const page = await browser.newPage()
     await page.setViewport({ width: 1280, height: 1307 })
     events.forEach(eventType => {
         page.on(eventType, async (eventFilterFunc)=>{
         if(eventType === 'dialog') {
+            console.log(eventFilterFunc, '=-============= Dialog')
             return eventFilterFunc.accept()
         }
         else if(eventType === 'response') {
@@ -92,15 +93,38 @@ async function initScrape(){
     await page.click('#enter');
     await page.waitFor('#modules');
     await page.click('#modules');
-    // await page.waitFor(`[id="${process.env.SURVEY_TYPE_ID}"]`)
-    await page.waitFor(1000);
-    await page.click(`[id="${process.env.SURVEY_TYPE_ID}"]`)
-    // await page.waitFor(`[id="${process.env.SURVEY_ID}"]`)
-    await page.waitFor(1000);
-    await page.click(`[id="${process.env.SURVEY_ID}"]`)
-    await page.waitFor("#cdk-describedby-message-container");
-    await page.click('#reset_answers')
-    questionArray = []
+    await page.waitForSelector('.group-detail-wrapper > .rfi-table-wrap > div > .ng-star-inserted > .yellow-btn')
+    await page.click('.group-detail-wrapper > .rfi-table-wrap > div > .ng-star-inserted > .yellow-btn')
+    if(await page.$('#mat-dialog-container') != null) {
+        await page.waitFor(2000)
+        await page.click('.mat-select-trigger > .mat-select-arrow-wrapper')
+        
+        await page.waitForSelector('#cdk-overlay-1 > .ng-trigger > .mat-select-content > #mat-option-0 > .mat-option-text')
+        await page.click('#cdk-overlay-1 > .ng-trigger > .mat-select-content > #mat-option-0 > .mat-option-text')
+        
+        await page.waitForSelector('#mat-dialog-0 > .ng-star-inserted > .mat-dialog-actions > .cdk-focused > .mat-button-wrapper')
+        await page.click('#mat-dialog-0 > .ng-star-inserted > .mat-dialog-actions > .cdk-focused > .mat-button-wrapper')
+        await page.waitFor(2000);
+        await page.waitForSelector('.ui-datatable-data > .ng-star-inserted:nth-child(1) > .ng-star-inserted > .ui-cell-data > .material-icons')
+        await page.click('.ui-datatable-data > .ng-star-inserted:nth-child(1) > .ng-star-inserted > .ui-cell-data > .material-icons')
+        
+        await page.waitForSelector('.ui-datatable-data > .ui-datatable-odd > .ng-star-inserted > .ui-cell-data > .scmp-link')
+        await page.click('.ui-datatable-data > .ui-datatable-odd > .ng-star-inserted > .ui-cell-data > .scmp-link')
+    }
+    await page.waitFor(2000);
+    await page.waitForSelector('.ui-datatable-data > .ng-star-inserted:nth-child(1) > .ng-star-inserted > .ui-cell-data > .material-icons')
+    await page.click('.ui-datatable-data > .ng-star-inserted:nth-child(1) > .ng-star-inserted > .ui-cell-data > .material-icons')
+    await page.waitForSelector('.ui-datatable-data > .ui-datatable-odd > .ng-star-inserted > .ui-cell-data > .scmp-link')
+    await page.click('.ui-datatable-data > .ui-datatable-odd > .ng-star-inserted > .ui-cell-data > .scmp-link')
+    // // await page.waitFor(`[id="${process.env.SURVEY_TYPE_ID}"]`)
+    // await page.waitFor(1000);
+    // await page.click(`[id="${process.env.SURVEY_TYPE_ID}"]`)
+    // // await page.waitFor(`[id="${process.env.SURVEY_ID}"]`)
+    // await page.waitFor(1000);
+    // await page.click(`[id="${process.env.SURVEY_ID}"]`)
+    // await page.waitFor("#cdk-describedby-message-container");
+    // await page.click('#reset_answers')
+    // questionArray = []
     // await page.waitFor(7000)
     // await page.waitForSelector('#facility_country');
     // await page.click('#facility_country')
